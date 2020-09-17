@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <button (click)="onClickNavToggle()"mat-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span *ngIf="!mobileQueryMax">Angular</span>
+  <span class="flex-fill"></span>
+  <div class="d-flex align-items-center">
+    <button mat-button aria-label="Example icon button with a search icon">
+      <mat-icon>search</mat-icon>
+    </button>
+    <div class="vl"></div>
+    <button mat-button aria-label="Example icon button with a email icon">
+      <mat-icon [matBadge]="demoMailNoti" matBadgeColor="accent">mail_outline</mat-icon>
+    </button>
+    <div class="vl"></div>
+    <button mat-button aria-label="Example icon button with a notifications icon">
+      <mat-icon [matBadge]="demoNoti" matBadgeColor="accent">notifications</mat-icon>
+    </button>
+  </div>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png">
+    <span class="ml-3" >Admin Anucha</span>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
